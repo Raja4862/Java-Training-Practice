@@ -1,0 +1,22 @@
+CREATE table vspr_department (dNo number(5) PRIMARY key,dName char(10));
+Create table vspr_emp (empId Number(5) Primary key,empName char(30), empSalary Number(10),dNo number(5) REFERENCES vspr_department(dNo));
+DESC vspr_emp;
+
+insert into vspr_department values(1,'Test');
+
+insert into vspr_emp values(11,'Raja',2500,1);
+insert into vspr_emp values(12,'Siva',4500,1);
+insert into vspr_emp values(13,'Swe',205001,null);
+
+select * from vspr_emp;
+select * from vspr_department;
+select empId from vspr_emp;
+
+update vspr_emp SET empsalary = 10000 where empid = 12;
+
+delete vspr_emp where empid = 13;
+
+
+
+
+drop table vspr_emp;
